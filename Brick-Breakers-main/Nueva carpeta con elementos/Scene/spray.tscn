@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwgmdj0belmmg"]
+
+[sub_resource type="Gradient" id="Gradient_fw6fv"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rblow"]
+gradient = SubResource("Gradient_fw6fv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7yf8"]
+particle_flag_disable_z = true
+spread = 5.0
+gravity = Vector3(0, 30, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_rblow")
+
+[node name="Spray" type="GPUParticles2D"]
+visible = false
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_p7yf8")
